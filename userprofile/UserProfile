@@ -1,1 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Profile - Silver Store</title>
+  <link rel="stylesheet" href="userprofile.css" />
+</head>
+<body>
 
+  <div class="profile-container">
+    <h2>User Profile</h2>
+
+    <div class="profile-pic">
+      <div class="placeholder" id="placeholder">No Image</div>
+      <img id="preview" style="display:none;" alt="Profile Preview" />
+      <input type="file" id="profileImage" accept="image/*" />
+    </div>
+
+    <label for="name">Name</label>
+    <input type="text" id="name" value="" />
+
+    <label for="email">Email</label>
+    <input type="email" id="email" value="" />
+
+    <label for="address">Address</label>
+    <textarea id="address"></textarea>
+
+    <button onclick="saveProfile()">Save Profile</button>
+  </div>
+
+  <script src="userprofile.js"></script>
+</body>
+</html>
