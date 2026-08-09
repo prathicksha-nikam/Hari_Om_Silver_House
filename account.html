@@ -61,6 +61,101 @@
   <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
   <link rel="stylesheet" href="css/aos.css">
   <link rel="stylesheet" href="css/style.css">
+	<style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f1f5f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      width: 100%;
+      max-width: 400px;
+      background-color: #e8f3f8;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .avatar-circle {
+      width: 100px;
+      height: 100px;
+      background-color: #91cad8;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 20px auto;
+    }
+
+    .avatar-placeholder {
+      font-size: 14px;
+      color: #355b75;
+    }
+
+    h2 {
+      color: #3d5a80;
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #64748b;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #0284c7;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #69b329;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #599e20;
+    }
+
+    .footer-links {
+      margin-top: 20px;
+      font-size: 12px;
+    }
+
+    .footer-links a {
+      color: #475569;
+      text-decoration: none;
+    }
+  </style>
 </head>
 
 <body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
@@ -130,56 +225,30 @@
         <!-- Navbar & Hero End -->
 
 		
-<!-- Main Card Container -->
-  <div class="w-full max-w-sm bg-[#e8f3f8] rounded-2xl shadow-sm border border-sky-100 p-8 text-center flex flex-col items-center">
-    
-    <!-- Avatar Placeholder -->
-    <div class="w-28 h-28 rounded-full bg-[#91cad8] flex items-center justify-center mb-6 shadow-inner relative overflow-hidden">
-      <!-- Add your minime avatar image here -->
-      <span class="text-sm text-[#355b75]">Avatar</span>
+<div class="login-container">
+    <div class="avatar-circle">
+      <div class="avatar-placeholder">Avatar</div>
     </div>
-
-    <!-- Title -->
-    <h2 class="text-2xl font-bold text-[#3d5a80] mb-6">
-      Log in
-    </h2>
-
-    <!-- Form -->
-    <form class="w-full flex flex-col gap-4">
-      <!-- Email Input -->
-      <div>
-        <input 
-          type="email" 
-          placeholder="Email" 
-          class="w-full px-4 py-3 bg-white border border-transparent rounded-lg text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-400 transition"
-          required 
-        />
+    
+    <h2>Log in to TunnelBear</h2>
+    
+    <form>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Email" required>
       </div>
-
-      <!-- Password Input -->
-      <div>
-        <input 
-          type="password" 
-          placeholder="Password" 
-          class="w-full px-4 py-3 bg-white border border-transparent rounded-lg text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-400 transition"
-          required 
-        />
+      
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Password" required>
       </div>
-
-      <!-- Submit Button -->
-      <button 
-        type="submit" 
-        class="w-full py-3 bg-[#69b329] hover:bg-[#599e20] text-white font-semibold rounded-lg shadow-sm transition duration-200 mt-2"
-      >
-        Log In
-      </button>
+      
+      <button type="submit">Log In</button>
     </form>
 
-    <!-- Links Section -->
-    <div class="mt-6 flex flex-col gap-2 text-xs text-slate-500">
-      <a href="#" class="hover:underline text-slate-400">I forgot my password</a>
+    <div class="footer-links">
+      <a href="#">I forgot my password</a>
     </div>
-
   </div>
 
 
