@@ -130,28 +130,57 @@
         <!-- Navbar & Hero End -->
 
 		
-<div class="profile-container">
-    <h2>User Profile</h2>
-
-    <div class="profile-pic">
-      <div class="placeholder" id="placeholder">No Image</div>
-      <img id="preview" style="display:none;" alt="Profile Preview" />
-      <input type="file" id="profileImage" accept="image/*" />
+<!-- Main Card Container -->
+  <div class="w-full max-w-sm bg-[#e8f3f8] rounded-2xl shadow-sm border border-sky-100 p-8 text-center flex flex-col items-center">
+    
+    <!-- Avatar Placeholder -->
+    <div class="w-28 h-28 rounded-full bg-[#91cad8] flex items-center justify-center mb-6 shadow-inner relative overflow-hidden">
+      <!-- Add your minime avatar image here -->
+      <span class="text-sm text-[#355b75]">Avatar</span>
     </div>
 
-    <label for="name">Name</label>
-    <input type="text" id="name" value="" />
+    <!-- Title -->
+    <h2 class="text-2xl font-bold text-[#3d5a80] mb-6">
+      Log in
+    </h2>
 
-    <label for="email">Email</label>
-    <input type="email" id="email" value="" />
+    <!-- Form -->
+    <form class="w-full flex flex-col gap-4">
+      <!-- Email Input -->
+      <div>
+        <input 
+          type="email" 
+          placeholder="Email" 
+          class="w-full px-4 py-3 bg-white border border-transparent rounded-lg text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-400 transition"
+          required 
+        />
+      </div>
 
-    <label for="address">Address</label>
-    <textarea id="address"></textarea>
+      <!-- Password Input -->
+      <div>
+        <input 
+          type="password" 
+          placeholder="Password" 
+          class="w-full px-4 py-3 bg-white border border-transparent rounded-lg text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-400 transition"
+          required 
+        />
+      </div>
 
-    <button onclick="saveProfile()">Save Profile</button>
+      <!-- Submit Button -->
+      <button 
+        type="submit" 
+        class="w-full py-3 bg-[#69b329] hover:bg-[#599e20] text-white font-semibold rounded-lg shadow-sm transition duration-200 mt-2"
+      >
+        Log In
+      </button>
+    </form>
+
+    <!-- Links Section -->
+    <div class="mt-6 flex flex-col gap-2 text-xs text-slate-500">
+      <a href="#" class="hover:underline text-slate-400">I forgot my password</a>
+    </div>
+
   </div>
-
-  <script src="userprofile.js"></script>
 
 
 <!-- Footer Start -->
