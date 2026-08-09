@@ -50,52 +50,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Preconnect to external resources -->
-   <style>
-.gallery-grid {
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-row-gap: 20px;
-column-gap: 2px;
-overflow: hidden;
-}
-.gallery-grid img {
-aspect-ratio: 1/1;
-object-fit: cover;
-transition : transform 0.2s ease;
-width: 100%;
-height: 100%;
-border-radius: 15px;
-}
-.gallery-grid a {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  border-radius: 15px; 
-}
 
-.gallery-grid a::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3));
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none; 
-}
-
-.gallery-grid a:hover::after {
-  opacity: 1;
-  transform: scale(1.03);
-}
-.gallery-grid img:hover{ 
-transform: scale(1.03);
-outline: 10px solid gold;}
-</style>
-  
-  
 
   <!-- Google Fonts (non-blocking) -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -146,7 +101,7 @@ outline: 10px solid gold;}
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
                     <div class="User-Profile">
-                    <a href="userprofile/UserProfile.html">
+                    <a href="account.html">
                      <lord-icon
                        src="https://cdn.lordicon.com/hrjifpbq.json"
                        trigger="hover"
@@ -161,12 +116,12 @@ outline: 10px solid gold;}
 
             <div class="container-xxl py-5 bg-dark hero-header mb-5">
                 <div class="container text-center my-5 pt-5 pb-4">
-                    <h1 class="display-3 text-white mb-3 animated slideInDown">About Us</h1>
+                    <h1 class="display-3 text-white mb-3 animated slideInDown">Account</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center text-uppercase">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
                             <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">About</li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Account</li>
                         </ol>
                     </nav>
                 </div>
@@ -174,124 +129,30 @@ outline: 10px solid gold;}
         </div>
         <!-- Navbar & Hero End -->
 
+		
+<div class="profile-container">
+    <h2>User Profile</h2>
 
-
-<script>
-// Synchronous WebP detection - runs before images load
-(function(){try{var c=document.createElement('canvas');c.width=c.height=1;if(c.toDataURL('image/webp').indexOf('webp')>0)document.documentElement.classList.add('webp')}catch(e){}})();
-</script>
-
-  <div class="site-wrap">
-
-    <div class="site-mobile-menu">
-      <div class="site-mobile-menu-header">
-        <div class="site-mobile-menu-close mt-3">
-          <span class="icon-close2 js-menu-toggle"></span>
-        </div>
-      </div>
-      <div class="site-mobile-menu-body"></div>
+    <div class="profile-pic">
+      <div class="placeholder" id="placeholder">No Image</div>
+      <img id="preview" style="display:none;" alt="Profile Preview" />
+      <input type="file" id="profileImage" accept="image/*" />
     </div>
 
+    <label for="name">Name</label>
+    <input type="text" id="name" value="" />
 
+    <label for="email">Email</label>
+    <input type="email" id="email" value="" />
 
+    <label for="address">Address</label>
+    <textarea id="address"></textarea>
 
-    <header class="site-navbar py-3" role="banner">
+    <button onclick="saveProfile()">Save Profile</button>
+  </div>
 
-      <div class="container-fluid">
-        <div class="row align-items-center">
+  <script src="userprofile.js"></script>
 
-            <div class="d-inline-block d-xl-none ms-md-0 me-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
-
-          </div>
-
-        </div>
-      </div>
-
-    </header>
-
-    <div class="site-section"  data-aos="fade">
-      <div class="container-fluid">
-        <div class="row justify-content-center">
-          <div class="col-md-7">
-            <div class="row mb-5">
-              <div class="col-12 ">
-                <h2 class="site-section-heading text-right">Portrait Gallery</h2>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <div class="row gallery-grid" id="lightgallery">
-          <div class="" data-aos="fade">
-            <a href="img/1000003769.jpg" class="glightbox" data-gallery="gallery1" data-title="Fading Light" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor doloremque hic excepturi fugit, sunt impedit fuga tempora, ad amet aliquid?"><img src="img/1000003769.jpg" alt="Image" class="img-fluid" fetchpriority="high" decoding="sync"></a>
-          </div>
-          <div class="" data-aos="fade">
-            <a href="img/1000005953.jpg" class="glightbox" data-gallery="gallery1" data-title="Fading Light" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam omnis quaerat molestiae, praesentium. Ipsam, reiciendis. Aut molestiae animi earum laudantium."><img src="img/1000005953.jpg" alt="Image" class="img-fluid" fetchpriority="high" decoding="sync"></a>
-          </div>
-          <div class="" data-aos="fade">
-            <a href="img/1000013639.jpg" class="glightbox" data-gallery="gallery1" data-title="Fading Light" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem reiciendis, dolorum illo temporibus culpa eaque dolore rerum quod voluptate doloribus."><img src="img/1000013639.jpg" alt="Image" class="img-fluid" loading="lazy" decoding="async"></a>
-          </div>
-          <div class="" data-aos="fade">
-            <a href="img/about-1.jpg" class="glightbox" data-gallery="gallery1" data-title="Fading Light" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim perferendis quae iusto omnis praesentium labore tempore eligendi quo corporis sapiente."><img src="img/about-1.jpg" alt="Image" class="img-fluid" loading="lazy" decoding="async"></a>
-          </div>
-          <div class="" data-aos="fade">
-            <a href="img/about-2.jpg" class="glightbox" data-gallery="gallery1" data-title="Fading Light" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, voluptatum voluptate tempore aliquam, dolorem distinctio. In quas maiores tenetur sequi."><img src="img/about-2.jpg" alt="Image" class="img-fluid" loading="lazy" decoding="async"></a>
-          </div>
-          <div class="" data-aos="fade">
-            <a href="img/about-3.jpg" class="glightbox" data-gallery="gallery1" data-title="Fading Light" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum cum culpa blanditiis illum, voluptatum iusto quisquam mollitia debitis quaerat maiores?"><img src="img/about-3.jpg" alt="Image" class="img-fluid" loading="lazy" decoding="async"></a>
-          </div>
-
-          <div class="" data-aos="fade">
-            <a href="img/about-4.jpg" class="glightbox" data-gallery="gallery1" data-title="Fading Light" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores similique impedit possimus, laboriosam enim at placeat nihil voluptatibus voluptate hic!"><img src="img/about-4.jpg" alt="Image" class="img-fluid" loading="lazy" decoding="async"></a>
-          </div>
-          <div class="" data-aos="fade">
-            <a href="img/bg-hero.jpg" class="glightbox" data-gallery="gallery1" data-title="Fading Light" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam vitae sed cum mollitia itaque soluta laboriosam eaque sit ratione, aliquid."><img src="img/bg-hero.jpg" alt="Image" class="img-fluid" loading="lazy" decoding="async"></a>
-          </div>
-          <div class="" data-aos="fade">
-            <a href="img/hero..png" class="glightbox" data-gallery="gallery1" data-title="Fading Light" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem reiciendis debitis beatae facilis quos, enim quis nobis magnam architecto earum!"><img src="images/nature_small_9.webp" alt="Image" class="img-fluid" loading="lazy" decoding="async"></a>
-          </div>
-
-          <div class="" data-aos="fade">
-            <a href="images/big-images/nature_big_9.webp" class="glightbox" data-gallery="gallery1" data-title="Fading Light" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque officiis magnam, facilis nam eos perspiciatis eligendi pariatur numquam debitis quos!"><img src="images/nature_small_9.webp" alt="Image" class="img-fluid" loading="lazy" decoding="async"></a>
-          </div>
-          <div class="" data-aos="fade">
-            <a href="images/big-images/nature_big_8.webp" class="glightbox" data-gallery="gallery1" data-title="Fading Light" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis consequatur quam et, delectus, cum iste ipsa animi eligendi obcaecati nemo."><img src="images/nature_small_8.webp" alt="Image" class="img-fluid" loading="lazy" decoding="async"></a>
-          </div>
-          <div class="" data-aos="fade">
-            <a href="images/big-images/nature_big_7.webp" class="glightbox" data-gallery="gallery1" data-title="Fading Light" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci quia illo voluptatibus numquam inventore, ab asperiores molestiae distinctio atque nihil."><img src="images/nature_small_7.webp" alt="Image" class="img-fluid" loading="lazy" decoding="async"></a>
-          </div>
-          <div class="" data-aos="fade">
-            <a href="images/big-images/nature_big_6.webp" class="glightbox" data-gallery="gallery1" data-title="Fading Light" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt unde placeat obcaecati sapiente illum, fuga nostrum necessitatibus delectus maiores magnam."><img src="images/nature_small_6.webp" alt="Image" class="img-fluid" loading="lazy" decoding="async"></a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/glightbox.min.js"></script>
-  <script src="js/main.js"></script>
-
-  <script>
-    // Initialize GLightbox
-    var lightbox = GLightbox({
-      selector: '.glightbox',
-      touchNavigation: true,
-      loop: true,
-      autoplayVideos: true
-    });
-  </script>
-
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MMFL1YR6W5"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-MMFL1YR6W5');
-  </script>
-
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"cd0b4b3a733644fc843ef0b185f98241"}' crossorigin="anonymous"></script>
 
 <!-- Footer Start -->
         <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
