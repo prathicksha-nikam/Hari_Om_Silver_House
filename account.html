@@ -32,25 +32,12 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <script>(function(w,i,g){w[g]=w[g]||[];if(typeof w[g].push=='function')w[g].push(i)})
-(window,'G-SEKJ4E9T4H','google_tags_first_party');</script><script async src="/s9cc/"></script>
-			<script>
-				window.dataLayer = window.dataLayer || [];
-				function gtag(){dataLayer.push(arguments);}
-				gtag('js', new Date());
-				gtag('set', 'developer_id.dYzg1YT', true);
-				gtag('config', 'G-SEKJ4E9T4H');
-			</script>
-			<meta name="robots" content="noindex, nofollow">
-
 
 <link rel="dns-prefetch" href="">
   <title>Gallery - Photosen</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Preconnect to external resources -->
-
+  
 
   <!-- Google Fonts (non-blocking) -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -61,21 +48,18 @@
   <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
   <link rel="stylesheet" href="css/aos.css">
   <link rel="stylesheet" href="css/style.css">
-	<style>
+  <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #f1f5f9;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
     }
 
     .login-container {
+      margin: 0 auto;
       width: 100%;
       max-width: 400px;
-      background-color: #e8f3f8;
+      background-color: #4c377a;
       border-radius: 20px;
       padding: 40px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -87,7 +71,6 @@
       height: 100px;
       background-color: #91cad8;
       border-radius: 50%;
-      display: flex;
       justify-content: center;
       align-items: center;
       margin: 0 auto 20px auto;
@@ -99,13 +82,14 @@
     }
 
     h2 {
-      color: #3d5a80;
+      color: #fcfcfc;
       margin-bottom: 30px;
     }
 
     .form-group {
       margin-bottom: 20px;
       text-align: left;
+     color: #fcfcfc;
     }
 
     label {
@@ -129,7 +113,7 @@
       border-color: #0284c7;
     }
 
-    button {
+    .button-1 {
       width: 100%;
       padding: 12px;
       background-color: #69b329;
@@ -142,7 +126,7 @@
       margin-top: 10px;
     }
 
-    button:hover {
+    .button-1:hover {
       background-color: #599e20;
     }
 
@@ -155,10 +139,81 @@
       color: #475569;
       text-decoration: none;
     }
+    /* AVATAR ONLY */
+
+.avatar-container {
+  width: 220px;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 800px;
+}
+
+#avatar {
+  width: 100%;
+  height: auto;
+  display: block;
+  transform-origin: center bottom;
+  transition: transform 0.25s ease-out;
+  animation: avatarFloat 3s ease-in-out infinite;
+  will-change: transform;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Gentle idle movement */
+@keyframes avatarFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-7px) rotate(1deg);
+  }
+}
+
+/* Email reaction */
+.avatar-container.email-active #avatar {
+  animation: emailLook 0.7s ease forwards;
+}
+
+@keyframes emailLook {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-4px) rotate(-4deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+/* Password reaction */
+.avatar-container.password-active #avatar {
+  animation: passwordReaction 0.6s ease forwards;
+}
+
+@keyframes passwordReaction {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-5px) rotate(4deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
   </style>
 </head>
 
-<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+<body>
     <div class="container-xxl bg-white p-0">
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -196,7 +251,7 @@
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
                     <div class="User-Profile">
-                    <a href="account.html">
+                    <a href="userprofile/UserProfile.html">
                      <lord-icon
                        src="https://cdn.lordicon.com/hrjifpbq.json"
                        trigger="hover"
@@ -211,12 +266,12 @@
 
             <div class="container-xxl py-5 bg-dark hero-header mb-5">
                 <div class="container text-center my-5 pt-5 pb-4">
-                    <h1 class="display-3 text-white mb-3 animated slideInDown">Account</h1>
+                    <h1 class="display-3 text-white mb-3 animated slideInDown">About Us</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center text-uppercase">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
                             <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">Account</li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">About</li>
                         </ol>
                     </nav>
                 </div>
@@ -224,13 +279,12 @@
         </div>
         <!-- Navbar & Hero End -->
 
-		
-<div class="login-container">
-    <div class="avatar-circle">
-      <div class="avatar-placeholder">Avatar</div>
-    </div>
+         <div class="login-container text-center ">
+    <div class="avatar-placeholder avatar-circle">
+      <img id="avatar" src="img/avatar.jpeg" alt="Avatar">
+      </div>
     
-    <h2>Log in to TunnelBear</h2>
+    <h2>Log in to Hari OM</h2>
     
     <form>
       <div class="form-group">
@@ -243,7 +297,7 @@
         <input type="password" id="password" placeholder="Password" required>
       </div>
       
-      <button type="submit">Log In</button>
+      <button class="button-1" type="submit">Log In</button>
     </form>
 
     <div class="footer-links">
@@ -251,8 +305,7 @@
     </div>
   </div>
 
-
-<!-- Footer Start -->
+       <!-- Footer Start -->
         <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
             <div class="container py-5">
                 <div class="row g-5">
@@ -281,7 +334,7 @@
                         <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/100094027271576/"><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-outline-light btn-social" href="http://www.youtube.com/@Hari_Om_silver"><i class="fab fa-youtube"></i><link rel="stylesheet" href="https://youtube.com/@hari_om_silver?si=EuLGvgz-waDTL0zY"></link></a>
                         <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/hari_om_vita?utm_source=ig_web_button_share_sheet&igsh=MTV4MGg4ZDZjcW40cw=="><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/hari_om_vita?utm_source=ig_web_button_share_sheet&igsh=MTV4MGg4ZDZjcW40cw=="><i class="fab fa-pinterest"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://pin.it/Tb3rLJ7Nq"><i class="fab fa-pinterest"></i></a>
                     </div></div>
                     <div class="col-lg-3 col-md-6">
                         <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Newsletter</h4>
@@ -300,15 +353,15 @@
                             &copy; <a class="border-bottom" href="#">HARI OM SIVLER HOUSE</a>, All Right Reserved. 
 							
 							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-							Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a><br><br>
-                            Distributed By <a class="border-bottom" href="https://themewagon.com" target="_blank">Bitelead</a>
+							Designed By <a class="border-bottom" href="">Prathicksha Nikam</a><br><br>
+                            Distributed By <a class="border-bottom" href="" target="_blank">Bitelead</a>
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">
                                 <a href="index.html">Home</a>
                                 <a href="cookies.html">Cookies</a>
-                                <a href="">Help</a>
-                                <a href="">FQAs</a>
+                                <a href="contact.html">Help</a>
+                                <a href="contact.html">FQAs</a>
                             </div>
                         </div>
                     </div>
@@ -335,7 +388,95 @@
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js">
+      /* AVATAR MOVEMENT */
+
+const avatar = document.getElementById("avatar");
+const avatarContainer = document.querySelector(".avatar-container");
+
+const emailInput = document.querySelector(
+  'input[type="email"], input[name="email"]'
+);
+
+const passwordInput = document.querySelector(
+  'input[type="password"], input[name="password"]'
+);
+
+
+/* Mouse-follow movement */
+
+document.addEventListener("mousemove", (event) => {
+
+  const x = (event.clientX / window.innerWidth) - 0.5;
+  const y = (event.clientY / window.innerHeight) - 0.5;
+
+  const rotateY = x * 12;
+  const rotateX = y * -8;
+
+  avatar.style.animation = "none";
+
+  avatar.style.transform =
+    `translateY(0) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+});
+
+
+/* Return to idle when mouse leaves */
+
+document.addEventListener("mouseleave", () => {
+
+  avatar.style.animation = "avatarFloat 3s ease-in-out infinite";
+  avatar.style.transform = "";
+
+});
+
+
+/* EMAIL FOCUS */
+
+if (emailInput) {
+
+  emailInput.addEventListener("focus", () => {
+
+    avatarContainer.classList.add("email-active");
+    avatarContainer.classList.remove("password-active");
+
+  });
+
+}
+
+
+/* PASSWORD FOCUS */
+
+if (passwordInput) {
+
+  passwordInput.addEventListener("focus", () => {
+
+    avatarContainer.classList.add("password-active");
+    avatarContainer.classList.remove("email-active");
+
+  });
+
+}
+
+
+/* Remove reaction when leaving input */
+
+[emailInput, passwordInput].forEach(input => {
+
+  if (input) {
+
+    input.addEventListener("blur", () => {
+
+      avatarContainer.classList.remove("email-active");
+      avatarContainer.classList.remove("password-active");
+
+    });
+
+  }
+
+});
+    </script>
+    
 </body>
 
 </html>
