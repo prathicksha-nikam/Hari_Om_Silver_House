@@ -397,7 +397,7 @@
 /*** Team ***/
 .team-item {
     box-shadow: 0 0 45px rgba(0, 0, 0, .08);
-    height: calc(100% - 38px);
+    height: fixed;
     transition: .5s;
 }
 
