@@ -12,7 +12,7 @@
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
 
     <!-- Favicon -->
-    <link href="img/hero.png" rel="icon">
+    <link href="logo/logo-removebg.png" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,9 +33,387 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+   <script>(function(w,i,g){w[g]=w[g]||[];if(typeof w[g].push=='function')w[g].push(i)})
+(window,'G-SEKJ4E9T4H','google_tags_first_party');</script><script async src="/s9cc/"></script>
+			<script>
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+				gtag('set', 'developer_id.dYzg1YT', true);
+				gtag('config', 'G-SEKJ4E9T4H');
+			</script>
+			<meta name="robots" content="noindex, nofollow">
+
+
+  <link rel="dns-prefetch" href="">
+  <title>Gallery - Photosen</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Preconnect to external resources -->
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #000;
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* ==============================
+       GALLERY
+       ============================== */
+
+    .gallery-section {
+      width: 100%;
+      max-width: 1600px;
+      margin: auto;
+      padding: 50px 30px;
+    }
+
+    .gallery-title {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .gallery-title h1 {
+      font-size: 42px;
+      font-weight: 700;
+    }
+
+    .gallery-title p {
+      margin-top: 10px;
+      color: #999;
+      font-size: 15px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      background: #111;
+      aspect-ratio: 4 / 3;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    /* ==============================
+       LIGHTBOX
+       ============================== */
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.96);
+
+      display: none;
+
+      align-items: center;
+      justify-content: center;
+
+      z-index: 9999;
+      padding: 30px;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-content {
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      flex-direction: column;
+
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-image {
+      max-width: 85%;
+      max-height: 76vh;
+
+      object-fit: contain;
+
+      border-radius: 8px;
+
+      user-select: none;
+
+      animation: zoomIn 0.3s ease;
+    }
+
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.92);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* ==============================
+       DESCRIPTION
+       ============================== */
+
+    .image-description {
+      max-width: 750px;
+
+      margin-top: 18px;
+
+      text-align: center;
+
+      font-size: 15px;
+
+      line-height: 1.6;
+
+      color: #ddd;
+
+      padding: 0 20px;
+    }
+
+    /* ==============================
+       CLOSE BUTTON
+       ============================== */
+
+    .close-btn {
+      position: absolute;
+
+      top: 20px;
+      right: 30px;
+
+      width: 50px;
+      height: 50px;
+
+      border: none;
+
+      border-radius: 50%;
+
+      background: rgba(255, 255, 255, 0.1);
+
+      color: white;
+
+      font-size: 35px;
+
+      cursor: pointer;
+
+      z-index: 10001;
+
+      transition: 0.3s ease;
+    }
+
+    .close-btn:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    /* ==============================
+       PREVIOUS / NEXT BUTTONS
+       ============================== */
+
+    .prev-btn,
+    .next-btn {
+      position: absolute;
+
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      width: 55px;
+      height: 55px;
+
+      border: none;
+
+      border-radius: 50%;
+
+      background: rgba(255, 255, 255, 0.12);
+
+      color: white;
+
+      font-size: 32px;
+
+      cursor: pointer;
+
+      z-index: 10001;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      transition: 0.3s ease;
+    }
+
+    .prev-btn:hover,
+    .next-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+
+      transform: translateY(-50%) scale(1.08);
+    }
+
+    .prev-btn {
+      left: 25px;
+    }
+
+    .next-btn {
+      right: 25px;
+    }
+
+    /* ==============================
+       IMAGE COUNTER
+       ============================== */
+
+    .image-counter {
+      position: absolute;
+
+      bottom: 25px;
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      color: white;
+
+      background: rgba(0, 0, 0, 0.55);
+
+      padding: 7px 14px;
+
+      border-radius: 20px;
+
+      font-size: 13px;
+    }
+
+    /* ==============================
+       TABLET
+       3 COLUMNS
+       ============================== */
+
+    @media (max-width: 1024px) {
+
+      .gallery-section {
+        padding: 40px 20px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+      }
+
+      .gallery-title h1 {
+        font-size: 36px;
+      }
+
+      .lightbox-image {
+        max-width: 80%;
+      }
+    }
+
+    /* ==============================
+       MOBILE
+       2 COLUMNS
+       ============================== */
+
+    @media (max-width: 600px) {
+
+      .gallery-section {
+        padding: 30px 12px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .gallery-title {
+        margin-bottom: 25px;
+      }
+
+      .gallery-title h1 {
+        font-size: 28px;
+      }
+
+      .gallery-title p {
+        font-size: 13px;
+      }
+
+      .gallery-item {
+        border-radius: 8px;
+      }
+
+      .lightbox {
+        padding: 15px;
+      }
+
+      .lightbox-image {
+        max-width: 78%;
+        max-height: 68vh;
+      }
+
+      .image-description {
+        font-size: 13px;
+        line-height: 1.5;
+        padding: 0 15px;
+      }
+
+      .close-btn {
+        top: 15px;
+        right: 15px;
+
+        width: 45px;
+        height: 45px;
+
+        font-size: 30px;
+      }
+
+      .prev-btn,
+      .next-btn {
+        width: 45px;
+        height: 45px;
+
+        font-size: 26px;
+      }
+
+      .prev-btn {
+        left: 10px;
+      }
+
+      .next-btn {
+        right: 10px;
+      }
+
+      .image-counter {
+        bottom: 12px;
+        font-size: 11px;
+      }
+    }
+</style>
 </head>
 
 <body>
+
     <div class="container-xxl bg-white p-0">
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -83,15 +461,14 @@
                        style="width:40px;height:40px">
                      </lord-icon></a>
                 </div>
-                </div>
-            </nav>
-
-            <div class="container-xxl py-5 bg-dark hero-header mb-5">
+            </div>
+        </nav>
+       <div class="container-xxl py-5 bg-dark hero-header mb-5">
                 <div class="container text-center my-5 pt-5 pb-4">
                     <h1 class="display-3 text-white mb-3 animated slideInDown">About Us</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center text-uppercase">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                             <li class="breadcrumb-item"><a href="#">Pages</a></li>
                             <li class="breadcrumb-item text-white active" aria-current="page">About</li>
                         </ol>
@@ -100,7 +477,6 @@
             </div>
         </div>
         <!-- Navbar & Hero End -->
-
 
         <!-- About Start -->
         <div class="container-xxl py-5">
@@ -124,7 +500,7 @@
                     </div>
                     <div class="col-lg-6">
                         <h5 class="section-title ff-secondary text-start text-primary fw-normal">About Us</h5>
-                        <h1 class="mb-4">Welcome to<img class="" src="img/hero.png" alt="">HARI OM</h1>
+                        <h3 class="mb-4">Welcome to<img class="" src="img/hero.png" alt="">HARI OM</h3>
                         <p class="mb-4">Offers an exquisite range of wholesale silver products, blending tradition with elegance. We specialize in premium silver items featuring unique varieties from Salam, Rajkot, Agra, and Mathura.</p>
                         <p class="mb-4">Whether you're a retailer or a silver enthusiast, our collection showcases intricate craftsmanship and cultural richness. Shop with us for authentic, high-quality silver at unbeatable prices, backed by trusted service and diverse regional designs.</p>
                         <div class="row g-4 mb-4">
@@ -154,121 +530,553 @@
         </div>
         <!-- About End -->
 
-		 <div class="container-fluid py-5">
-            <div class="container-fluid">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-12">
-                        <div class="row gx-3 gy-3">
-                            <div class="col-2 text-start">
-                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="img/about-1.jpg" style="margin-top: 20%;">
-                            </div>
-                            <div class="col-2 text-start">
-                                <img class="img-fluid rounded w-55 wow zoomIn" data-wow-delay="0.3s" src="img/about-2.jpg" style="margin-top: 25%;">
-                            </div>
-							 <div class="col-2 text-start">
-                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="img/about-1.jpg" style="margin-top: 20%;">
-                            </div>
-                            <div class="col-2 text-start">
-                                <img class="img-fluid rounded w-55 wow zoomIn" data-wow-delay="0.3s" src="img/about-2.jpg" style="margin-top: 25%;">
-                            </div>
-                            <div class="col-2 text-start">
-                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="img/about-1.jpg" style="margin-top: 20%;">
-                            </div>
-                            <div class="col-2 text-start">
-                                <img class="img-fluid rounded w-55 wow zoomIn" data-wow-delay="0.3s" src="img/about-2.jpg" style="margin-top: 25%;">
-                            </div>
-                            <div class="col-2 text-end">
-                                <img class="img-fluid rounded w-55 wow zoomIn" data-wow-delay="0.5s" src="img/about-3.jpg">
-                            </div>
-                            <div class="col-2 text-end">
-                                <img class="img-fluid rounded w-90 wow zoomIn" data-wow-delay="0.7s" src="img/about-4.jpg">
-                            </div>
-                            <div class="col-2 text-end">
-                                <img class="img-fluid rounded w-53 wow zoomIn" data-wow-delay="0.5s" src="img/about-3.jpg">
-                            </div>
-                            <div class="col-2 text-end">
-                                <img class="img-fluid rounded w-90 wow zoomIn" data-wow-delay="0.7s" src="img/about-4.jpg">
-                            </div>
-                            <div class="col-2 text-end">
-                                <img class="img-fluid rounded w-55 wow zoomIn" data-wow-delay="0.5s" src="img/about-3.jpg">
-                            </div>
-                            <div class="col-2 text-end">
-                                <img class="img-fluid rounded w-90 wow zoomIn" data-wow-delay="0.7s" src="img/about-4.jpg">
-                            </div>
-                        </div>
-                    </div>
+        <div class="site-wrap">
 
-        <!-- Team Start -->
-        <div class="container-xxl pt-5 pb-3">
-            <div class="container">
-                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Team Members</h5>
-                    <h1 class="mb-5">Our Master Chefs</h1>
-                </div>
-                <div class="row g-4">
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="team-item text-center rounded overflow-hidden">
-                            <div class="rounded-circle overflow-hidden m-4">
-                                <img class="img-fluid" src="img/team-1.jpg" alt="">
-                            </div>
-                            <h5 class="mb-0">Full Name</h5>
-                            <small>Designation</small>
-                            <div class="d-flex justify-content-center mt-3">
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="team-item text-center rounded overflow-hidden">
-                            <div class="rounded-circle overflow-hidden m-4">
-                                <img class="img-fluid" src="img/team-2.jpg" alt="">
-                            </div>
-                            <h5 class="mb-0">Full Name</h5>
-                            <small>Designation</small>
-                            <div class="d-flex justify-content-center mt-3">
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="team-item text-center rounded overflow-hidden">
-                            <div class="rounded-circle overflow-hidden m-4">
-                                <img class="img-fluid" src="img/team-3.jpg" alt="">
-                            </div>
-                            <h5 class="mb-0">Full Name</h5>
-                            <small>Designation</small>
-                            <div class="d-flex justify-content-center mt-3">
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="team-item text-center rounded overflow-hidden">
-                            <div class="rounded-circle overflow-hidden m-4">
-                                <img class="img-fluid" src="img/team-4.jpg" alt="">
-                            </div>
-                            <h5 class="mb-0">Full Name</h5>
-                            <small>Designation</small>
-                            <div class="d-flex justify-content-center mt-3">
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
         </div>
-        <!-- Team End -->
-        
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
 
-         <!-- Footer Start -->
+    <header class="site-navbar py-3" role="banner">
+
+      <div class="container-fluid">
+        <div class="row align-items-center">
+
+            <div class="d-inline-block d-xl-none ms-md-0 me-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </header>
+
+ <!-- =================================
+       GALLERY SECTION
+       ================================= -->
+
+  <section class="gallery-section">
+
+    <div class="gallery-title">
+
+      <h1>Gallery</h1>
+      <p>Explore our collection</p>
+    </div>
+    <div class="gallery-grid" id="galleryGrid">
+      <div class="gallery-item" data-description="A beautiful view captured during a peaceful evening.">
+        <img src="img/1000003769.jpg"alt="Gallery Image 1">
+      </div>
+      <div class="gallery-item" data-description="A beautiful view captured during a peaceful evening.">
+        <img src="img/1000005953.jpg"alt="Gallery Image 1">
+      </div>
+      <div class="gallery-item" data-description="A beautiful view captured during a peaceful evening.">
+        <img src="img/1000013639.jpg"alt="Gallery Image 1">
+      </div>
+      <div class="gallery-item" data-description="A beautiful view captured during a peaceful evening.">
+        <img src="img/_user.jpg"alt="Gallery Image 1">
+      </div>
+      <div class="gallery-item" data-description="A beautiful view captured during a peaceful evening.">
+        <img src="img/about-1.jpg"alt="Gallery Image 1">
+      </div>
+      <div class="gallery-item" data-description="A beautiful view captured during a peaceful evening.">
+        <img src="img/about-2.jpg"alt="Gallery Image 1">
+      </div>
+      <div class="gallery-item" data-description="A beautiful view captured during a peaceful evening.">
+        <img src="img/about-3.jpg"alt="Gallery Image 1">
+      </div>
+      <div class="gallery-item" data-description="A beautiful view captured during a peaceful evening.">
+        <img src="img/about-4.jpg"alt="Gallery Image 1">
+      </div>
+      <div class="gallery-item" data-description="A beautiful view captured during a peaceful evening.">
+        <img src="img/avatar.jpeg"alt="Gallery Image 1">
+      </div>
+      <div class="gallery-item" data-description="A beautiful view captured during a peaceful evening.">
+        <img src="img/bg-hero.jpg"alt="Gallery Image 1">
+      </div>
+      <div class="gallery-item" data-description="A beautiful view captured during a peaceful evening.">
+        <img src="img/hero..png"alt="Gallery Image 1">
+      </div>
+      <div class="gallery-item" data-description="A beautiful view captured during a peaceful evening.">
+        <img src="img/hero.png"alt="Gallery Image 1">
+      </div>
+      <div class="gallery-item" data-description="A beautiful view captured during a peaceful evening.">
+        <img src="img/team-1.jpg"alt="Gallery Image 1">
+      </div>
+      <div class="gallery-item" data-description="A beautiful view captured during a peaceful evening.">
+        <img src="img/team-2.jpg"alt="Gallery Image 1">
+      </div>
+      <div class="gallery-item" data-description="A beautiful view captured during a peaceful evening.">
+        <img src="img/team-3.jpg"alt="Gallery Image 1">
+      </div>
+      <div class="gallery-item" data-description="A beautiful view captured during a peaceful evening.">
+        <img src="img/team-4.jpg"alt="Gallery Image 1">
+      </div>
+      <div class="gallery-item" data-description="A beautiful view captured during a peaceful evening.">
+        <img src="img/testimonial-1.png"alt="Gallery Image 1">
+      </div>
+      <div class="gallery-item" data-description="A beautiful view captured during a peaceful evening.">
+        <img src="img/testimonial-2.jpg"alt="Gallery Image 1">
+      </div>
+      
+    </div>
+
+  </section>
+
+
+  <!-- =================================
+       FULLSCREEN LIGHTBOX
+       ================================= -->
+
+  <div
+    class="lightbox"
+    id="lightbox"
+  >
+
+    <!-- CLOSE -->
+
+    <button
+      class="close-btn"
+      id="closeBtn"
+      aria-label="Close"
+    >
+
+      &times;
+
+    </button>
+
+
+    <!-- PREVIOUS -->
+
+    <button
+      class="prev-btn"
+      id="prevBtn"
+      aria-label="Previous image"
+    >
+
+      &#10094;
+
+    </button>
+
+
+    <!-- CONTENT -->
+
+    <div class="lightbox-content">
+
+      <img
+        class="lightbox-image"
+        id="lightboxImage"
+        src=""
+        alt=""
+      >
+
+
+      <div
+        class="image-description"
+        id="imageDescription"
+      ></div>
+
+    </div>
+
+
+    <!-- NEXT -->
+
+    <button
+      class="next-btn"
+      id="nextBtn"
+      aria-label="Next image"
+    >
+
+      &#10095;
+
+    </button>
+
+
+    <!-- COUNTER -->
+
+    <div
+      class="image-counter"
+      id="imageCounter"
+    >
+
+      1 / 8
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =================================
+       JAVASCRIPT
+       ================================= -->
+
+  <script>
+
+    const galleryGrid =
+      document.getElementById("galleryGrid");
+
+    const lightbox =
+      document.getElementById("lightbox");
+
+    const lightboxImage =
+      document.getElementById("lightboxImage");
+
+    const imageDescription =
+      document.getElementById("imageDescription");
+
+    const closeBtn =
+      document.getElementById("closeBtn");
+
+    const prevBtn =
+      document.getElementById("prevBtn");
+
+    const nextBtn =
+      document.getElementById("nextBtn");
+
+    const imageCounter =
+      document.getElementById("imageCounter");
+
+
+    let currentIndex = 0;
+
+    let galleryItems = [];
+
+
+    /* =================================
+       SHUFFLE GALLERY
+       ================================= */
+
+    function shuffleGallery() {
+
+      const items = Array.from(
+        galleryGrid.children
+      );
+
+
+      /* Fisher-Yates shuffle */
+
+      for (
+        let i = items.length - 1;
+        i > 0;
+        i--
+      ) {
+
+        const randomIndex =
+          Math.floor(
+            Math.random() * (i + 1)
+          );
+
+
+        [
+          items[i],
+          items[randomIndex]
+        ] =
+        [
+          items[randomIndex],
+          items[i]
+        ];
+
+      }
+
+
+      /* Put shuffled items back */
+
+      items.forEach(item => {
+
+        galleryGrid.appendChild(item);
+
+      });
+
+
+      galleryItems =
+        document.querySelectorAll(".gallery-item");
+
+    }
+
+
+    /* =================================
+       SHUFFLE WHEN PAGE OPENS
+       ================================= */
+
+    shuffleGallery();
+
+
+    /* =================================
+       OPEN LIGHTBOX
+       ================================= */
+
+    function openLightbox(index) {
+
+      currentIndex = index;
+
+      showImage(currentIndex);
+
+      lightbox.classList.add("active");
+
+      document.body.style.overflow = "hidden";
+
+    }
+
+
+    /* =================================
+       SHOW IMAGE
+       ================================= */
+
+    function showImage(index) {
+
+      const item =
+        galleryItems[index];
+
+      const image =
+        item.querySelector("img");
+
+
+      const description =
+        item.dataset.description;
+
+
+      lightboxImage.src =
+        image.src;
+
+
+      lightboxImage.alt =
+        image.alt;
+
+
+      imageDescription.textContent =
+        description;
+
+
+      imageCounter.textContent =
+        `${index + 1} / ${galleryItems.length}`;
+
+    }
+
+
+    /* =================================
+       CLICK GALLERY IMAGE
+       ================================= */
+
+    function addGalleryEvents() {
+
+      galleryItems.forEach(
+        (item, index) => {
+
+          item.addEventListener(
+            "click",
+            () => {
+
+              openLightbox(index);
+
+            }
+          );
+
+        }
+      );
+
+    }
+
+
+    addGalleryEvents();
+
+
+    /* =================================
+       NEXT IMAGE
+       ================================= */
+
+    function nextImage() {
+
+      currentIndex++;
+
+
+      if (
+        currentIndex >=
+        galleryItems.length
+      ) {
+
+        currentIndex = 0;
+
+      }
+
+
+      showImage(currentIndex);
+
+    }
+
+
+    /* =================================
+       PREVIOUS IMAGE
+       ================================= */
+
+    function previousImage() {
+
+      currentIndex--;
+
+
+      if (currentIndex < 0) {
+
+        currentIndex =
+          galleryItems.length - 1;
+
+      }
+
+
+      showImage(currentIndex);
+
+    }
+
+
+    /* =================================
+       NEXT BUTTON
+       ================================= */
+
+    nextBtn.addEventListener(
+      "click",
+      (event) => {
+
+        event.stopPropagation();
+
+        nextImage();
+
+      }
+    );
+
+
+    /* =================================
+       PREVIOUS BUTTON
+       ================================= */
+
+    prevBtn.addEventListener(
+      "click",
+      (event) => {
+
+        event.stopPropagation();
+
+        previousImage();
+
+      }
+    );
+
+
+    /* =================================
+       CLOSE LIGHTBOX
+       ================================= */
+
+    function closeLightbox() {
+
+      lightbox.classList.remove(
+        "active"
+      );
+
+      document.body.style.overflow =
+        "auto";
+
+      lightboxImage.src = "";
+
+    }
+
+
+    closeBtn.addEventListener(
+      "click",
+      closeLightbox
+    );
+
+
+    /* =================================
+       CLICK BACKGROUND TO CLOSE
+       ================================= */
+
+    lightbox.addEventListener(
+      "click",
+      (event) => {
+
+        if (
+          event.target === lightbox
+        ) {
+
+          closeLightbox();
+
+        }
+
+      }
+    );
+
+
+    /* =================================
+       KEYBOARD CONTROLS
+       ================================= */
+
+    document.addEventListener(
+      "keydown",
+      (event) => {
+
+        if (
+          !lightbox.classList.contains(
+            "active"
+          )
+        ) {
+
+          return;
+
+        }
+
+
+        if (
+          event.key === "ArrowRight"
+        ) {
+
+          nextImage();
+
+        }
+
+
+        if (
+          event.key === "ArrowLeft"
+        ) {
+
+          previousImage();
+
+        }
+
+
+        if (
+          event.key === "Escape"
+        ) {
+
+          closeLightbox();
+
+        }
+
+      }
+    );
+
+  </script>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/glightbox.min.js"></script>
+  <script src="js/main.js"></script>
+
+  
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MMFL1YR6W5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MMFL1YR6W5');
+  </script>
+
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"cd0b4b3a733644fc843ef0b185f98241"}' crossorigin="anonymous"></script>
+
+
+        
+        <!-- Footer Start -->
         <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
             <div class="container py-5">
                 <div class="row g-5">
@@ -282,7 +1090,7 @@
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contact</h4>
-                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Pune Branch -> Ramsukh Vaishnav Building, Gala No. 2, 858/59 A, Laviwar Peth, Pune </p>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Pune Branch -> Ramsukh Vaishnav Building, Gala No. 2, 858/59 A, Raviwar Peth, Pune </p>
                         <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Vita Branch -> 1st Floor, Shop No. 1, 2, 3, 4 Sandeep Heights, Mayni Road, Vita (Sangli) 415 311</p>
                         <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 9025334006</p>
                         <p class="mb-2"><i class="fa fa-envelope me-3"></i>hariomsilverhouse@gmail.com</p>
@@ -334,8 +1142,9 @@
         <!-- Footer End -->
 
 
+
         <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+     <a href="#" class="btn btn-lg bs-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
 
     <!-- JavaScript Libraries -->
@@ -352,6 +1161,207 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const gallery = document.getElementById("aboutGallery");
+
+    const viewer = document.getElementById("galleryViewer");
+    const viewerImage = document.getElementById("galleryViewerImage");
+    const description = document.getElementById("galleryDescription");
+
+    const closeButton = document.getElementById("galleryClose");
+    const nextButton = document.getElementById("galleryNext");
+    const prevButton = document.getElementById("galleryPrev");
+
+    let images = Array.from(
+        gallery.querySelectorAll(".gallery-image")
+    );
+
+    let currentIndex = 0;
+
+
+    /* =====================================================
+       RANDOM SHUFFLE
+       Runs every time the page loads
+    ===================================================== */
+
+    function shuffleImages() {
+
+        for (let i = images.length - 1; i > 0; i--) {
+
+            const randomIndex = Math.floor(
+                Math.random() * (i + 1)
+            );
+
+            [images[i], images[randomIndex]] =
+            [images[randomIndex], images[i]];
+        }
+
+        images.forEach(function (image) {
+
+            gallery.appendChild(
+                image.parentElement
+            );
+
+        });
+    }
+
+
+    /* Shuffle gallery on page load */
+
+    shuffleImages();
+
+
+    /* =====================================================
+       OPEN FULLSCREEN VIEWER
+    ===================================================== */
+
+    function openViewer(index) {
+
+        currentIndex = index;
+
+        const image = images[currentIndex];
+
+        viewerImage.src = image.src;
+
+        viewerImage.alt = image.alt;
+
+        description.textContent =
+            image.dataset.description || image.alt || "";
+
+        viewer.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+    }
+
+
+    /* =====================================================
+       CLOSE VIEWER
+    ===================================================== */
+
+    function closeViewer() {
+
+        viewer.classList.remove("active");
+
+        document.body.style.overflow = "";
+    }
+
+
+    /* =====================================================
+       NEXT IMAGE
+    ===================================================== */
+
+    function showNext() {
+
+        currentIndex++;
+
+        if (currentIndex >= images.length) {
+            currentIndex = 0;
+        }
+
+        openViewer(currentIndex);
+    }
+
+
+    /* =====================================================
+       PREVIOUS IMAGE
+    ===================================================== */
+
+    function showPrevious() {
+
+        currentIndex--;
+
+        if (currentIndex < 0) {
+            currentIndex = images.length - 1;
+        }
+
+        openViewer(currentIndex);
+    }
+
+
+    /* =====================================================
+       CLICK ON GALLERY IMAGE
+    ===================================================== */
+
+    images.forEach(function (image, index) {
+
+        image.addEventListener("click", function () {
+
+            openViewer(index);
+
+        });
+
+    });
+
+
+    /* =====================================================
+       BUTTONS
+    ===================================================== */
+
+    closeButton.addEventListener(
+        "click",
+        closeViewer
+    );
+
+    nextButton.addEventListener(
+        "click",
+        showNext
+    );
+
+    prevButton.addEventListener(
+        "click",
+        showPrevious
+    );
+
+
+    /* =====================================================
+       CLICK OUTSIDE IMAGE TO CLOSE
+    ===================================================== */
+
+    viewer.addEventListener("click", function (event) {
+
+        if (event.target === viewer) {
+            closeViewer();
+        }
+
+    });
+
+
+    /* =====================================================
+       KEYBOARD CONTROLS
+    ===================================================== */
+
+    document.addEventListener("keydown", function (event) {
+
+        if (!viewer.classList.contains("active")) {
+            return;
+        }
+
+        if (event.key === "ArrowRight") {
+
+            showNext();
+
+        }
+
+        else if (event.key === "ArrowLeft") {
+
+            showPrevious();
+
+        }
+
+        else if (event.key === "Escape") {
+
+            closeViewer();
+
+        }
+
+    });
+
+});
+</script>
+
 </body>
 
 </html>
