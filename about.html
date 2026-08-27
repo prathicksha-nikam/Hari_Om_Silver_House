@@ -1710,9 +1710,10 @@ function getYouTubeId(url) {
 
       return parsed.pathname.substring(1);
 
-    }
-
-    return parsed.searchParams.get("v");
+    }if(
+		parsed.pathname.includes('/shorts/'))
+	{ return parsed.pathname.split('/shorts/')[1].split('/')[0].split('?')[0];}
+	return parsed.searchParams.get("v");
 
   } catch {
 
