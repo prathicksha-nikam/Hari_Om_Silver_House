@@ -1055,6 +1055,1159 @@
 
   </script>
 
+		<!-- SOCIAL MEDIA CAROUSELS -->
+<section class="social-media-section">
+
+  <!-- ================= INSTAGRAM ================= -->
+  <div class="social-block">
+    <h2>Instagram</h2>
+
+    <div class="social-carousel-wrap">
+      <button class="social-arrow prev" onclick="moveSocialCarousel('instagram', -1)">‹</button>
+
+      <div class="social-carousel" id="instagram-carousel"></div>
+
+      <button class="social-arrow next" onclick="moveSocialCarousel('instagram', 1)">›</button>
+    </div>
+  </div>
+
+
+  <!-- ================= YOUTUBE ================= -->
+  <div class="social-block">
+    <h2>YouTube</h2>
+
+    <div class="social-carousel-wrap">
+      <button class="social-arrow prev" onclick="moveSocialCarousel('youtube', -1)">‹</button>
+
+      <div class="social-carousel" id="youtube-carousel"></div>
+
+      <button class="social-arrow next" onclick="moveSocialCarousel('youtube', 1)">›</button>
+    </div>
+  </div>
+
+
+  <!-- ================= FACEBOOK ================= -->
+  <div class="social-block">
+    <h2>Facebook</h2>
+
+    <div class="social-carousel-wrap">
+      <button class="social-arrow prev" onclick="moveSocialCarousel('facebook', -1)">‹</button>
+
+      <div class="social-carousel" id="facebook-carousel"></div>
+
+      <button class="social-arrow next" onclick="moveSocialCarousel('facebook', 1)">›</button>
+    </div>
+  </div>
+
+
+  <!-- ================= PINTEREST ================= -->
+  <div class="social-block">
+    <h2>Pinterest</h2>
+
+    <div class="social-carousel-wrap">
+      <button class="social-arrow prev" onclick="moveSocialCarousel('pinterest', -1)">‹</button>
+
+      <div class="social-carousel" id="pinterest-carousel"></div>
+
+      <button class="social-arrow next" onclick="moveSocialCarousel('pinterest', 1)">›</button>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ================= POPUP ================= -->
+
+<div class="social-modal" id="socialModal">
+
+  <div class="social-modal-box">
+
+    <button class="social-modal-close" onclick="closeSocialModal()">×</button>
+
+    <div class="social-modal-media" id="socialModalMedia"></div>
+
+    <div class="social-modal-info">
+
+      <div class="social-modal-platform" id="socialModalPlatform">
+        Instagram
+      </div>
+
+      <h3 id="socialModalTitle">Social Media Post</h3>
+
+      <p id="socialModalDescription">
+        View this post on the original platform.
+      </p>
+
+      <a
+        id="socialModalButton"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View on Instagram
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<style>
+
+/* =========================================================
+   SOCIAL MEDIA SECTION
+========================================================= */
+
+.social-media-section {
+  width: 100%;
+  padding: 30px 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.social-block {
+  width: 100%;
+  margin-bottom: 45px;
+}
+
+.social-block h2 {
+  margin: 0 0 18px;
+  padding: 0;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   CAROUSEL
+========================================================= */
+
+.social-carousel-wrap {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 45px;
+}
+
+.social-carousel {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.social-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* =========================================================
+   4:3 CARDS
+========================================================= */
+
+.social-card {
+  position: relative;
+  flex: 0 0 calc(25% - 12px);
+
+  aspect-ratio: 4 / 3;
+
+  overflow: hidden;
+
+  border-radius: 16px;
+
+  background: #eeeeee;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.social-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+
+/* IMAGE */
+
+.social-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+
+/* PLACEHOLDER */
+
+.social-placeholder {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+  background: #eeeeee;
+
+  color: #555;
+
+  font-weight: 600;
+}
+
+.social-placeholder-icon {
+  font-size: 35px;
+}
+
+
+/* PLATFORM BADGE */
+
+.social-platform-badge {
+  position: absolute;
+
+  top: 10px;
+  left: 10px;
+
+  padding: 6px 10px;
+
+  border-radius: 20px;
+
+  background: rgba(0,0,0,0.65);
+
+  color: white;
+
+  font-size: 11px;
+
+  backdrop-filter: blur(5px);
+}
+
+
+/* PLAY BUTTON */
+
+.social-play {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 52px;
+  height: 52px;
+
+  border-radius: 50%;
+
+  background: rgba(0,0,0,0.65);
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   ARROWS
+========================================================= */
+
+.social-arrow {
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  z-index: 5;
+
+  width: 40px;
+  height: 40px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: white;
+
+  color: #222;
+
+  font-size: 30px;
+
+  line-height: 1;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  box-shadow: 0 3px 15px rgba(0,0,0,0.18);
+
+  transition: 0.2s ease;
+}
+
+.social-arrow:hover {
+  transform: translateY(-50%) scale(1.08);
+}
+
+.social-arrow.prev {
+  left: 0;
+}
+
+.social-arrow.next {
+  right: 0;
+}
+
+
+/* =========================================================
+   POPUP
+========================================================= */
+
+.social-modal {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 99999;
+
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(0,0,0,0.75);
+
+  backdrop-filter: blur(4px);
+}
+
+.social-modal.active {
+  display: flex;
+}
+
+
+.social-modal-box {
+  position: relative;
+
+  width: min(900px, 95vw);
+
+  max-height: 92vh;
+
+  overflow: hidden;
+
+  display: grid;
+
+  grid-template-columns: 1.4fr 0.8fr;
+
+  background: white;
+
+  border-radius: 18px;
+
+  box-shadow: 0 25px 80px rgba(0,0,0,0.4);
+}
+
+
+/* MEDIA */
+
+.social-modal-media {
+  min-height: 520px;
+
+  background: #111;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.social-modal-media img,
+.social-modal-media iframe {
+  width: 100%;
+  height: 100%;
+
+  min-height: 520px;
+
+  border: 0;
+
+  object-fit: contain;
+}
+
+
+/* INFO */
+
+.social-modal-info {
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.social-modal-platform {
+  font-size: 13px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  margin-bottom: 12px;
+}
+
+.social-modal-info h3 {
+  margin: 0 0 12px;
+
+  font-size: 24px;
+}
+
+.social-modal-info p {
+  color: #666;
+
+  line-height: 1.6;
+
+  margin-bottom: 25px;
+}
+
+
+/* VIEW BUTTON */
+
+#socialModalButton {
+  display: block;
+
+  width: 100%;
+
+  padding: 13px 18px;
+
+  border-radius: 9px;
+
+  background: #111;
+
+  color: white;
+
+  text-align: center;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  box-sizing: border-box;
+}
+
+#socialModalButton:hover {
+  opacity: 0.85;
+}
+
+
+/* CLOSE */
+
+.social-modal-close {
+  position: absolute;
+
+  z-index: 20;
+
+  top: 12px;
+  right: 12px;
+
+  width: 40px;
+  height: 40px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: rgba(0,0,0,0.7);
+
+  color: white;
+
+  font-size: 27px;
+
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   MOBILE
+   2 CARDS
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .social-carousel-wrap {
+    padding: 0 34px;
+  }
+
+  .social-card {
+    flex: 0 0 calc(50% - 8px);
+    border-radius: 13px;
+  }
+
+  .social-carousel {
+    gap: 12px;
+  }
+
+  .social-arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 25px;
+  }
+
+  .social-modal {
+    padding: 10px;
+  }
+
+  .social-modal-box {
+    width: 96vw;
+
+    max-height: 94vh;
+
+    display: block;
+
+    overflow-y: auto;
+
+    border-radius: 14px;
+  }
+
+  .social-modal-media {
+    min-height: 300px;
+  }
+
+  .social-modal-media img,
+  .social-modal-media iframe {
+    min-height: 300px;
+  }
+
+  .social-modal-info {
+    padding: 20px;
+  }
+}
+
+</style>
+
+
+<script>
+
+/* =========================================================
+   YOUR SOCIAL MEDIA POSTS
+   ADD UP TO 15 LINKS PER PLATFORM
+========================================================= */
+
+const socialPosts = {
+
+  instagram: [
+
+    "https://www.instagram.com/reel/DBls7otJm5T/?utm_source=ig_web_button_share_sheet&igsi=MzRlODBiNWFlZA=="
+  ],
+   instagram: [
+
+    "https://www.instagram.com/reel/DBls7otJm5T/?utm_source=ig_web_button_share_sheet&igsi=MzRlODBiNWFlZA=="
+  ],
+
+
+  youtube: [
+
+    "https://youtube.com/shorts/GANWMuEf09g?si=ZxaBagrHBHUMZeLp"
+
+  ],
+
+
+  facebook: [
+
+    "https://www.facebook.com/share/r/19a25smVXd/"
+
+  ],
+
+
+  pinterest: [
+
+    /* ADD YOUR PIN LINKS HERE */
+
+    /*
+    "https://pin.it/XXXXXXXX",
+    */
+
+  ]
+
+};
+
+
+/* =========================================================
+   PLATFORM INFORMATION
+========================================================= */
+
+const socialInfo = {
+
+  instagram: {
+    name: "Instagram",
+    button: "View on Instagram",
+    icon: "◎"
+  },
+
+  youtube: {
+    name: "YouTube",
+    button: "View on YouTube",
+    icon: "▶"
+  },
+
+  facebook: {
+    name: "Facebook",
+    button: "View on Facebook",
+    icon: "f"
+  },
+
+  pinterest: {
+    name: "Pinterest",
+    button: "View on Pinterest",
+    icon: "P"
+  }
+
+};
+
+
+/* =========================================================
+   YOUTUBE VIDEO ID
+========================================================= */
+
+function getYouTubeId(url) {
+
+  try {
+
+    const parsed = new URL(url);
+
+    if (
+      parsed.hostname.includes("youtu.be")
+    ) {
+
+      return parsed.pathname.substring(1);
+
+    }
+
+    return parsed.searchParams.get("v");
+
+  } catch {
+
+    return null;
+
+  }
+
+}
+
+
+/* =========================================================
+   CREATE THUMBNAIL
+========================================================= */
+
+function getThumbnail(platform, url) {
+
+  if (platform === "youtube") {
+
+    const id = getYouTubeId(url);
+
+    if (id) {
+
+      return `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+
+    }
+
+  }
+
+  return null;
+
+}
+
+
+/* =========================================================
+   CREATE CARD
+========================================================= */
+
+function createSocialCard(platform, url) {
+
+  const card =
+    document.createElement("div");
+
+  card.className = "social-card";
+
+  const thumbnail =
+    getThumbnail(platform, url);
+
+
+  /* YOUTUBE */
+
+  if (thumbnail) {
+
+    const img =
+      document.createElement("img");
+
+    img.src = thumbnail;
+
+    img.loading = "lazy";
+
+    img.alt =
+      `${socialInfo[platform].name} post`;
+
+    card.appendChild(img);
+
+  }
+
+  /* OTHER PLATFORMS */
+
+  else {
+
+    const placeholder =
+      document.createElement("div");
+
+    placeholder.className =
+      "social-placeholder";
+
+    placeholder.innerHTML = `
+
+      <div class="social-placeholder-icon">
+        ${socialInfo[platform].icon}
+      </div>
+
+      <div>
+        ${socialInfo[platform].name}
+      </div>
+
+    `;
+
+    card.appendChild(
+      placeholder
+    );
+
+  }
+
+
+  /* PLATFORM BADGE */
+
+  const badge =
+    document.createElement("div");
+
+  badge.className =
+    "social-platform-badge";
+
+  badge.textContent =
+    socialInfo[platform].name;
+
+  card.appendChild(
+    badge
+  );
+
+
+  /* PLAY BUTTON */
+
+  if (
+    platform === "youtube" ||
+    platform === "facebook"
+  ) {
+
+    const play =
+      document.createElement("div");
+
+    play.className =
+      "social-play";
+
+    play.textContent =
+      "▶";
+
+    card.appendChild(
+      play
+    );
+
+  }
+
+
+  /* CLICK */
+
+  card.addEventListener(
+    "click",
+    function() {
+
+      openSocialModal(
+        platform,
+        url
+      );
+
+    }
+  );
+
+
+  return card;
+
+}
+
+
+/* =========================================================
+   RENDER CAROUSELS
+========================================================= */
+
+function renderSocialCarousels() {
+
+  Object.keys(socialPosts)
+    .forEach(platform => {
+
+      const carousel =
+        document.getElementById(
+          `${platform}-carousel`
+        );
+
+      if (!carousel) return;
+
+      carousel.innerHTML = "";
+
+
+      socialPosts[platform]
+        .slice(0, 15)
+        .forEach(url => {
+
+          if (!url) return;
+
+          carousel.appendChild(
+            createSocialCard(
+              platform,
+              url
+            )
+          );
+
+        });
+
+    });
+
+}
+
+
+/* =========================================================
+   MOVE CAROUSEL
+========================================================= */
+
+function moveSocialCarousel(
+  platform,
+  direction
+) {
+
+  const carousel =
+    document.getElementById(
+      `${platform}-carousel`
+    );
+
+  if (!carousel) return;
+
+
+  const card =
+    carousel.querySelector(
+      ".social-card"
+    );
+
+  if (!card) return;
+
+
+  const amount =
+    card.offsetWidth + 16;
+
+
+  carousel.scrollBy({
+
+    left:
+      amount *
+      2 *
+      direction,
+
+    behavior:
+      "smooth"
+
+  });
+
+}
+
+
+/* =========================================================
+   OPEN POPUP
+========================================================= */
+
+function openSocialModal(
+  platform,
+  url
+) {
+
+  const modal =
+    document.getElementById(
+      "socialModal"
+    );
+
+  const media =
+    document.getElementById(
+      "socialModalMedia"
+    );
+
+  const platformText =
+    document.getElementById(
+      "socialModalPlatform"
+    );
+
+  const title =
+    document.getElementById(
+      "socialModalTitle"
+    );
+
+  const description =
+    document.getElementById(
+      "socialModalDescription"
+    );
+
+  const button =
+    document.getElementById(
+      "socialModalButton"
+    );
+
+
+  media.innerHTML = "";
+
+
+  platformText.textContent =
+    socialInfo[platform].name;
+
+
+  title.textContent =
+    `${socialInfo[platform].name} Post`;
+
+
+  description.textContent =
+    "View this content on the original social-media platform.";
+
+
+  button.textContent =
+    socialInfo[platform].button;
+
+
+  button.href =
+    url;
+
+
+  /* =====================================================
+     YOUTUBE
+  ===================================================== */
+
+  if (
+    platform === "youtube"
+  ) {
+
+    const id =
+      getYouTubeId(url);
+
+    if (id) {
+
+      const iframe =
+        document.createElement(
+          "iframe"
+        );
+
+      iframe.src =
+        `https://www.youtube.com/embed/${id}?autoplay=1`;
+
+      iframe.allow =
+        "autoplay; fullscreen";
+
+      iframe.allowFullscreen =
+        true;
+
+      media.appendChild(
+        iframe
+      );
+
+    }
+
+  }
+
+
+  /* =====================================================
+     INSTAGRAM
+  ===================================================== */
+
+  else if (
+    platform === "instagram"
+  ) {
+
+    const iframe =
+      document.createElement(
+        "iframe"
+      );
+
+    iframe.src =
+      url;
+
+    iframe.style.background =
+      "#fff";
+
+    media.appendChild(
+      iframe
+    );
+
+  }
+
+
+  /* =====================================================
+     FACEBOOK
+  ===================================================== */
+
+  else if (
+    platform === "facebook"
+  ) {
+
+    const iframe =
+      document.createElement(
+        "iframe"
+      );
+
+    iframe.src =
+      "https://www.facebook.com/plugins/post.php?href=" +
+      encodeURIComponent(url) +
+      "&show_text=true&width=500";
+
+    iframe.allow =
+      "autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share";
+
+    media.appendChild(
+      iframe
+    );
+
+  }
+
+
+  /* =====================================================
+     PINTEREST
+  ===================================================== */
+
+  else if (
+    platform === "pinterest"
+  ) {
+
+    const iframe =
+      document.createElement(
+        "iframe"
+      );
+
+    iframe.src =
+      url;
+
+    iframe.style.background =
+      "#fff";
+
+    media.appendChild(
+      iframe
+    );
+
+  }
+
+
+  modal.classList.add(
+    "active"
+  );
+
+
+  document.body.style.overflow =
+    "hidden";
+
+}
+
+
+/* =========================================================
+   CLOSE POPUP
+========================================================= */
+
+function closeSocialModal() {
+
+  const modal =
+    document.getElementById(
+      "socialModal"
+    );
+
+  const media =
+    document.getElementById(
+      "socialModalMedia"
+    );
+
+
+  modal.classList.remove(
+    "active"
+  );
+
+  media.innerHTML =
+    "";
+
+  document.body.style.overflow =
+    "";
+
+}
+
+
+/* =========================================================
+   CLICK OUTSIDE POPUP
+========================================================= */
+
+document
+  .getElementById("socialModal")
+  .addEventListener(
+    "click",
+    function(event) {
+
+      if (
+        event.target === this
+      ) {
+
+        closeSocialModal();
+
+      }
+
+    }
+  );
+
+
+/* =========================================================
+   ESCAPE KEY
+========================================================= */
+
+document.addEventListener(
+  "keydown",
+  function(event) {
+
+    if (
+      event.key === "Escape"
+    ) {
+
+      closeSocialModal();
+
+    }
+
+  }
+);
+
+
+/* =========================================================
+   LOAD
+========================================================= */
+
+renderSocialCarousels();
+
+</script>
+
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/aos.js"></script>
   <script src="js/glightbox.min.js"></script>
