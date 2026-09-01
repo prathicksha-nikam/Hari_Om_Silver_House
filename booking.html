@@ -267,6 +267,19 @@
     <script src="js/main.js"></script>
 	<script src="js/booking.js"></script>
 	<script type="module">
+		import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
+
+const auth = getAuth();
+
+onAuthStateChanged(auth, (user) => {
+  if (!user) {
+    // User is signed out, redirect to login page
+    window.location.href = 'login.html';
+  } else {
+    // User is signed in, allow access
+    console.log('User is logged in:', user.uid);
+  }
+});
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-analytics.js";
