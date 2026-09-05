@@ -42,7 +42,7 @@
   // 1. Imports from Firebase SDKs (MUST BE AT THE VERY TOP)
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js";
-  import { getAuth, CreateWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+  import { getAuth, createWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
   // 2. Firebase Configuration
   const firebaseConfig = {
@@ -63,7 +63,7 @@
 
   // 4. Function to handle Sign-up
   function signUpUser(email, password) {
-    CreateWithEmailAndPassword(auth, email, password)
+    createWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         alert("Sign up successful!");
         window.location.href = "index.html";
@@ -81,6 +81,6 @@
     signUpUser(email, password);
   });
 </script>
-    <script> type="module" src="js/signup.js"</script>
+    <script type="module" src="js/signup.js"></script>
 </body>
 </html>
