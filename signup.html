@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hari Om Silver House</title>
+    <link rel="stylesheet" href=link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/login_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="login-div">
+    <div class="logo">
+        <img src="img/hero.png" alt="">
+    </div>
+    <div class="title">SIGN UP </div>
+     <div class="sub-title">MADE BEAUTIFUL CONNECTION !</div>
+     <div class="fields">
+         <div class="username">
+            <i class="fas fa-user"></i>
+              <input type="email" class="email-input" id="email"
+               placeholder="Email"/>
+         </div>
+         <div class="password">
+            <i class="fas fa-lock"></i>
+    
+               <input type="password" class="pass-input" id="password"
+               placeholder="password"/>
+         </div>
+         <button class="signin-button" id="submit">sign up</button>
+         <div class="link">
+            <a href="#">Forgot password? </a> or <a href="#sign_in.html">change account</a>
+
+         </div>
+     </div>
+
+    
+    </div>
+    <script type="module">
+  // 1. Imports from Firebase SDKs (MUST BE AT THE VERY TOP)
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js";
+  import { getAuth, CreateWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+  // 2. Firebase Configuration
+  const firebaseConfig = {
+  apiKey: "AIzaSyBRy1gUvPbFvV8DDKWEJHqYHpBK6gxvWMM",
+  authDomain: "hari-om-silver-house.firebaseapp.com",
+  databaseURL: "https://hari-om-silver-house-default-rtdb.firebaseio.com",
+  projectId: "hari-om-silver-house",
+  storageBucket: "hari-om-silver-house.firebasestorage.app",
+  messagingSenderId: "569332331985",
+  appId: "1:569332331985:web:e70526cd0cb427cb979cf0",
+  measurementId: "G-358SX2WRW8"
+};
+
+  // 3. Initialize Firebase Services
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const auth = getAuth(app);
+
+  // 4. Function to handle Sign-up
+  function signUpUser(email, password) {
+    CreateWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        alert("Sign up successful!");
+        window.location.href = "index.html";
+      })
+      .catch((error) => {
+        alert("Error signing up: " + error.message);
+      });
+  }
+
+  // 5. Attach click event to your submit button
+  document.getElementById("submit").addEventListener("click", (e) => {
+    e.preventDefault();
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    signUpUser(email, password);
+  });
+</script>
+</body>
+</html>
