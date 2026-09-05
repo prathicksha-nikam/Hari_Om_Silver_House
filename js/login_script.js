@@ -26,7 +26,7 @@ async function handleSignIn(event) {
     alert(`Success! Signed in as: ${user.email}`);
 
     // Redirect to homepage
-    window.location.href = "/"; // Update path if your homepage is 'index.html' or another route
+    window.location.href = "index.html"; // Update path if your homepage is 'index.html' or another route
   } catch (error) {
     console.error("Firebase Sign-in Error:", error.code, error.message);
     alert(`Sign-in failed: ${error.message}`);
