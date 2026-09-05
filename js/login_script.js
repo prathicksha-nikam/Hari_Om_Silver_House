@@ -1,5 +1,5 @@
 function validation() {
-    let username = document.getElementById("username").value;
+    let username = document.getElementById("email").value;
     let pass = document.getElementById("password").value;
     if (username != "" && pass != "") {
         document.getElementById("submit").disabled = false;
