@@ -6,6 +6,23 @@ import {
   onAuthStateChanged 
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBRy1gUvPbFvV8DDKWEJHqYHpBK6gxvWMM",
+  authDomain: "hari-om-silver-house.firebaseapp.com",
+  databaseURL: "https://hari-om-silver-house-default-rtdb.firebaseio.com",
+  projectId: "hari-om-silver-house",
+  storageBucket: "hari-om-silver-house.firebasestorage.app",
+  messagingSenderId: "569332331985",
+  appId: "1:569332331985:web:e70526cd0cb427cb979cf0",
+  measurementId: "G-358SX2WRW8"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
 const auth = getAuth();
 
 // 1. Automatically check if the user is already logged in when the page loads
