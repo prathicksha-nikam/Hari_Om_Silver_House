@@ -4,63 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hari Om Silver House</title>
-    <link rel="stylesheet" href=link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
+    <title>Hari Om Silver House - Login</title>
+    <!-- Favicon -->
+    <link href="img/hero.png" rel="icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/login_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class="login-div">
-    <div class="logo">
-        <img src="img/hero.png" alt="">
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/hero.png" alt="Hari Om Silver House">
+            </a>
+        </div>
+        <div class="title">LOG IN</div>
+        <div class="sub-title">MADE BEAUTIFUL CONNECTION !</div>
+        
+        <!-- Auth status alert message -->
+        <div id="auth-alert" class="auth-alert" role="alert"></div>
+
+        <!-- Logged-in state container (shown when user is authenticated) -->
+        <div id="user-status" style="display: none;"></div>
+
+        <!-- Login fields (shown when user is logged out) -->
+        <div class="fields" id="login-fields">
+            <div class="username">
+                <i class="fas fa-user"></i>
+                <input type="email" class="email-input" id="email" placeholder="Email" autocomplete="email" required />
+            </div>
+            <div class="password">
+                <i class="fas fa-lock"></i>
+                <input type="password" class="pass-input" id="password" placeholder="Password" autocomplete="current-password" required />
+            </div>
+            <button class="signin-button" id="submit" type="button">login</button>
+            <div class="link">
+                <a href="#" id="forgot-password">Forgot password?</a> or <a href="signup.html">Sign Up</a>
+            </div>
+            <div class="text-center mt-3">
+                <a href="index.html" style="color: #888; font-size: 13px; text-decoration: none;">
+                    <i class="fas fa-arrow-left"></i> Back to Homepage
+                </a>
+            </div>
+        </div>
     </div>
-    <div class="title">LOG IN</div>
-     <div class="sub-title">MADE BEAUTIFUL CONNECTION !</div>
-     <div class="fields">
-         <div class="username">
-            <i class="fas fa-user"></i>
-              <input type="email" class="email-input"
-               placeholder="Email"/>
-         </div>
-         <div class="password">
-            <i class="fas fa-lock"></i>
-    
-               <input type="password" class="pass-input"
-               placeholder="password"/>
-         </div>
-         <button class="signin-button">login</button>
-         <div class="link">
-            <a href="#">Forgot password? </a> or <a href="#"> Sign Up</a>
 
-         </div>
-     </div>
-
-    
-    </div>
-    <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyBRy1gUvPbFvV8DDKWEJHqYHpBK6gxvWMM",
-    authDomain: "hari-om-silver-house.firebaseapp.com",
-    projectId: "hari-om-silver-house",
-    storageBucket: "hari-om-silver-house.firebasestorage.app",
-    messagingSenderId: "569332331985",
-    appId: "1:569332331985:web:e70526cd0cb427cb979cf0",
-    measurementId: "G-358SX2WRW8"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
-    <script>npm install -g firebase-tools</script>
+    <!-- Firebase Authentication Script -->
+    <script type="module" src="js/login_script.js"></script>
 </body>
 </html>
