@@ -1,64 +1,108 @@
+// Firebase Authentication handler for signup page
+import { auth } from "./firebase-config.js";
 import { 
-  getAuth, 
   createUserWithEmailAndPassword, 
   setPersistence, 
   browserLocalPersistence, 
   onAuthStateChanged 
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyBRy1gUvPbFvV8DDKWEJHqYHpBK6gxvWMM",
-  authDomain: "hari-om-silver-house.firebaseapp.com",
-  databaseURL: "https://hari-om-silver-house-default-rtdb.firebaseio.com",
-  projectId: "hari-om-silver-house",
-  storageBucket: "hari-om-silver-house.firebasestorage.app",
-  messagingSenderId: "569332331985",
-  appId: "1:569332331985:web:e70526cd0cb427cb979cf0",
-  measurementId: "G-358SX2WRW8"
-};
+// DOM Elements
+const emailInput = document.getElementById("email");
+const passwordInput = document.getElementById("password");
+const submitBtn = document.getElementById("submit");
+const authAlert = document.getElementById("auth-alert");
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+function showAlert(message, type = "danger") {
+  if (!authAlert) {
+    alert(message);
+    return;
+  }
+  authAlert.textContent = message;
+  authAlert.className = `auth-alert alert-${type}`;
+  authAlert.style.display = "block";
+}
 
-const auth = getAuth();
+function hideAlert() {
+  if (authAlert) authAlert.style.display = "none";
+}
 
-// 1. Automatically check if the user is already logged in when the page loads
+// 1. Session Persistence
+setPersistence(auth, browserLocalPersistence).catch(console.warn);
+
+// 2. Check if already logged in
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    // User is already signed in, redirect them to main page
-    window.location.href = "index.html"; 
+    // If user is already authenticated
+    console.log("Logged in as:", user.email);
   }
 });
 
-// 2. Function to handle Sign Up
+// 3. Sign up user
 async function signUpUser(email, password) {
+  hideAlert();
+  if (!email || !password) {
+    showAlert("Please enter both email and password.", "danger");
+    return;
+  }
+
+  if (password.length < 6) {
+    showAlert("Password must be at least 6 characters long.", "danger");
+    return;
+  }
+
+  const originalText = submitBtn ? submitBtn.innerText : "sign up";
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.innerText = "Creating account...";
+  }
+
   try {
-    // Set persistence to LOCAL so the session persists even after closing the browser
-    await setPersistence(auth, browserLocalPersistence);
-    
-    // Create new user account
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    alert("Sign up successful!");
-    
-    // Redirect to home page
-    window.location.href = "index.html";
+    showAlert(`Account created successfully! Welcome, ${userCredential.user.email}`, "success");
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 1200);
   } catch (error) {
-    alert("Error signing up: " + error.message);
+    console.error("Firebase Sign-up Error:", error.code, error.message);
+    let message = "Sign up failed.";
+    if (error.code === "auth/email-already-in-use") {
+      message = "This email is already in use. Try logging in instead.";
+    } else if (error.code === "auth/weak-password") {
+      message = "Password is too weak. Please use at least 6 characters.";
+    } else if (error.code === "auth/invalid-email") {
+      message = "Please enter a valid email address.";
+    } else {
+      message = error.message;
+    }
+    showAlert(message, "danger");
+  } finally {
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.innerText = originalText;
+    }
   }
 }
 
-// 3. Attach event listener to your submit button
-document.getElementById("submit")?.addEventListener("click", (e) => {
-  e.preventDefault();
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-  
-  if (email && password) {
+// Event Listeners
+if (submitBtn) {
+  submitBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const email = emailInput ? emailInput.value.trim() : "";
+    const password = passwordInput ? passwordInput.value : "";
     signUpUser(email, password);
-  } else {
-    alert("Please enter both email and password.");
+  });
+}
+
+[emailInput, passwordInput].forEach((input) => {
+  if (input) {
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        const email = emailInput ? emailInput.value.trim() : "";
+        const password = passwordInput ? passwordInput.value : "";
+        signUpUser(email, password);
+      }
+    });
   }
 });
