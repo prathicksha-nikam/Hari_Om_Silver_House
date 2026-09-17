@@ -36,18 +36,47 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Pre-fill fields if user is authenticated with Firebase
+  // Helper function to redirect unauthenticated users to the sign-in page
+  function redirectToSignIn() {
+    const currentPath = window.location.pathname.split("/").pop() || "booking.html";
+    const redirectUrl = `login.html?redirect=${encodeURIComponent(currentPath)}`;
+    window.location.href = redirectUrl;
+  }
+
+  // Check authentication state on page load and pre-fill fields if user is authenticated with Firebase
+  let currentUser = null;
+  let authChecked = false;
+
   onAuthStateChanged(auth, (user) => {
-    if (user) {
-      if (emailInput && !emailInput.value) emailInput.value = user.email || "";
-      if (nameInput && !nameInput.value && user.displayName) nameInput.value = user.displayName;
+    currentUser = user;
+    authChecked = true;
+
+    if (!user) {
+      showAlert("You must be signed in to make a booking. Redirecting to sign in...", "warning");
+      setTimeout(() => {
+        redirectToSignIn();
+      }, 1500);
+      return;
     }
+
+    if (emailInput && !emailInput.value) emailInput.value = user.email || "";
+    if (nameInput && !nameInput.value && user.displayName) nameInput.value = user.displayName;
   });
 
   if (bookingForm) {
     bookingForm.addEventListener("submit", async (e) => {
       e.preventDefault();
       hideAlert();
+
+      // Check if user is authenticated before proceeding with booking
+      const user = auth.currentUser || currentUser;
+      if (!user) {
+        showAlert("You must be signed in to submit a booking. Redirecting to sign in...", "danger");
+        setTimeout(() => {
+          redirectToSignIn();
+        }, 1200);
+        return;
+      }
 
       const customerName = nameInput ? nameInput.value.trim() : "";
       const customerEmail = emailInput ? emailInput.value.trim() : "";
