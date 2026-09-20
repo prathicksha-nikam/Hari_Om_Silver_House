@@ -411,6 +411,8 @@
 
 .team-item img {
     transition: .5s;
+    aspect-ratio: 1/1;
+    object-fit: cover;
 }
 
 .team-item:hover img {
