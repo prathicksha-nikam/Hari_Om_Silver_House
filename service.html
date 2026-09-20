@@ -33,6 +33,168 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+	<style>
+    /* Color Variables for Dark Theme */
+:root {
+    --gold-primary: #d4af37;
+    --gold-subtle: rgba(212, 175, 55, 0.15);
+    --text-muted: #94a3b8;
+    --border-dark: #1e293b;
+    --accent-red: #ef4444;
+    --accent-green: #10b981;
+}
+
+/* Page & Section Defaults */
+body {
+    background-color: var(--bg-dark-main);
+    color: var(--text-light);
+}
+
+.dark-section {
+    background-color: var(--bg-dark-main);
+    padding: 60px 0;
+}
+
+/* Section Headings */
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 2.2rem;
+    color: var(#6f42c1);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 12px;
+    font-family:"Nunito",sans-serif;
+}
+
+.section-header p {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+/* Comparison Table Styling */
+.comparison-wrapper {
+    background: var(--bg-dark-card);
+    border: 1px solid var(--border-dark);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow-x: auto;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.comparison-table th, 
+.comparison-table td {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border-dark);
+    font-size: 0.95rem;
+}
+
+.comparison-table th {
+    color: var(--gold-primary);
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.comparison-table td {
+    color: var(--text-light);
+}
+
+/* Vertical Golden Lines for Our Brand Column */
+.comparison-table .highlight-col {
+    background-color: rgba(212, 175, 55, 0.03);
+    border-left: 2px solid var(--gold-primary);
+    border-right: 2px solid var(--gold-primary);
+    font-weight: 600;
+}
+
+/* Indicator Styles */
+.cross-mark {
+    color: var(--accent-red);
+    font-weight: bold;
+    margin-right: 6px;
+}
+
+.check-mark {
+    color: var(--accent-green);
+    font-weight: bold;
+    margin-right: 6px;
+}
+
+/* Daily Wearability Grid Styling */
+.lifestyle-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+@media (max-width: 992px) {
+    .lifestyle-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .lifestyle-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.lifestyle-card {
+    background: var(--bg-dark-card);
+    border: 1px solid var(--border-dark);
+    border-radius: 12px;
+    padding: 30px 24px;
+    position: relative;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.lifestyle-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(226, 191, 77, 0.781);
+}
+
+.lifestyle-card .badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--gold-subtle);
+    color: var(--gold-primary);
+    border: 1px solid var(--gold-primary);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.lifestyle-card h3 {
+    margin: 10px 0 15px 0;
+    color: var(--text-light);
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.lifestyle-card p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+        </style>
 </head>
 
 <body>
@@ -177,77 +339,110 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item rounded pt-3">
-                            <div class="p-4">
-                                <div class="User-Profile">
-                    <script src="https://cdn.lordicon.com/lordicon.js"></script>
-                    <lord-icon
-                     src="https://cdn.lordicon.com/hroklero.json"
-                     trigger="hover"
-                     stroke="light"
-                     colors="primary:#ffc738,secondary:#ffc738"
-                     style="width:50px;height:50px">
-                    </lord-icon>
-                              </div>
-                                <h5>Master Pieces</h5>
-                                <p>Explore a wide variety of silver designs, styles, and collections to suit every taste and occasion.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item rounded pt-3">
-                            <div class="p-4">
-                                <div>
-                                <script src="https://cdn.lordicon.com/lordicon.js"></script>
-                                <lord-icon
-                                  src="https://cdn.lordicon.com/edplgash.json"
-                                  trigger="hover"
-                                  style="width:50px;height:50px">
-                                 </lord-icon></div>
-                                <h5>Quality Product</h5>
-                                <p>silver products are crafted with precision, ensuring exceptional quality, durability, and lasting shine every time.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="service-item rounded pt-3">
-                            <div class="p-4">
-                                <div>
-                                <script src="https://cdn.lordicon.com/lordicon.js"></script>
-                                <lord-icon
-                                 src="https://cdn.lordicon.com/pmawqxvu.json"
-                                 trig`ger="hover"
-                                 colors="primary:#ffc738,secondary:#ffc738,tertiary:#ffc738"
-                                 style="width:50px;height:50px">
-                                 </lord-icon></div>
-                                <h5>Online Order</h5>
-                                <p>Soon to be Easily place online orders with secure payment and trusted service from our silver shop.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="service-item rounded pt-3">
-                            <div class="p-4">
-                                <div>
-                               <script src="https://cdn.lordicon.com/lordicon.js"></script>
-                                <lord-icon
-                                  src="https://cdn.lordicon.com/cadyhyeo.json"
-                                  trigger="hover"
-                                  colors="primary:#ffc738,secondary:#2ca58d,tertiary:#4bb3fd"
-                                  style="width:50px;height:50px">
-                                 </lord-icon></div>
-                                <h5>24/7 Service</h5>
-                                <p>We offer reliable, fast, and customer-focused services to meet all your every silver needs.</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
         <!-- Service End -->
 
+               <div class="container">
+                  <h1>Elegance Meets Asset Value</h1>
+                  <p>Discover crafted fine jewelry designed for effortless daily wear and backed by long-term intrinsic value retention.</p>
+                </div>
 
+                <!-- Comparison Matrix Section -->
+<section class="dark-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Why Choose Our Fine Jewelry</h2>
+            <p>A side-by-side analysis showing how we stand apart from others</p>
+        </div>
+
+        <div class="comparison-wrapper wow fadeInUp">
+            <table class="comparison-table ">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Fast Fashion Brands</th>
+                        <th class="highlight-col">Our Brand</th>
+                        <th>Traditional Luxury</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Material Quality</td>
+                        <td>No Comments</td>
+                        <td class="highlight-col">We Garranty </td>
+                        <td>Pure</td>
+                    </tr>
+                    <tr>
+                        <td>Daily Wear Durability</td>
+                        <td>Tarnishes Quickly</td>
+                        <td class="highlight-col">Waterproof & Scratch Resistant</td>
+                        <td>High Maintenance Needed</td>
+                    </tr>
+                    <tr>
+                        <td>Price Markup</td>
+                        <td>10x – 20x Cost</td>
+                        <td class="highlight-col">Transparent Direct-to-Consumer</td>
+                        <td>30x – 50x Markup</td>
+                    </tr>
+                    <tr>
+                        <td>Resale & Asset Value</td>
+                        <td><span class="cross-mark">✕</span>Low Resale Value</td>
+                        <td class="highlight-col"><span class="check-mark">✓</span>Content Value</td>
+                        <td><span class="check-mark">✓</span>High Value (High Markup)</td>
+                    </tr>
+                    <tr>
+                        <td>Hypoallergenic</td>
+                        <td><span class="cross-mark">✕</span>Often Contains Nickel</td>
+                        <td class="highlight-col"><span class="check-mark">✓</span>100% Nickel-Free</td>
+                        <td><span class="check-mark">✓</span>Safe for Sensitive Skin</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- Daily Wearability Section -->
+<section class="dark-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Built For Your Daily Life</h2>
+            <p>Designed to transition seamlessly through every part of your dynamic day</p>
+        </div>
+
+        <div class="lifestyle-grid">
+            <div class="lifestyle-card">
+                <span class="badge">Active Wear</span>
+                <h3>GYM & WELLNESS</h3>
+                <p>Sweat-proof solid metals that do not tarnish or react with sweat during intense workouts.</p>
+            </div>
+            <div class="lifestyle-card">
+                <span class="badge">Professional</span>
+                <h3>WORK & OFFICE</h3>
+                <p>Subtle, sophisticated designs engineered to sit comfortably without catching on clothing.</p>
+            </div>
+            <div class="lifestyle-card">
+                <span class="badge">Waterproof</span>
+                <h3>SHOWER & POOL</h3>
+                <p>No need to remove your signature pieces. Resistant to water and routine soap exposure.</p>
+            </div>
+            <div class="lifestyle-card">
+                <span class="badge">Evening</span>
+                <h3>EVENTS & GALAS</h3>
+                <p>High-polish finishes and hand-set ethically sourced diamonds that glow under any light.</p>
+            </div>
+        </div>
+    </div>
+</section>
+        <div class="container-xxl">
+        <div class="container">
+            <h2>Find Your Forever Piece</h2>
+            <p style="color: var(--text-muted); margin-bottom: 25px;">Explore our collection designed for daily elegance and lasting value.</p>
+            <a href="menu.html" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">EXPLORE COLLECTION!</a>
+        </div>
+    </div>
 
        <!-- Footer Start -->
         <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
