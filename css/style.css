@@ -281,7 +281,10 @@
 .nav-pills .nav-item .active {
     border-bottom: 2px solid var(--primary);
 }
-
+.tab-container img {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
 
 /*** Youtube Video ***/
 .video {
