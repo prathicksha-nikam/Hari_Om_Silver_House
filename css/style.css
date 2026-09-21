@@ -281,7 +281,7 @@
 .nav-pills .nav-item .active {
     border-bottom: 2px solid var(--primary);
 }
-.tab-container img {
+.tab-content img {
     aspect-ratio: 1/1;
     object-fit: cover;
 }
