@@ -33,6 +33,226 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+	<style>
+        :root {
+            --bg-card-dark: #0f141d;
+            --gold-primary: #d4af37;
+            --gold-accent: #d4af37;
+            --gold-muted: rgba(212, 175, 55, 0.4);
+            --text-heading: #f4ebd0;
+            --text-body: #a3b1c2;
+            --border-classic: #1c2533;
+            --bg-dark-main: #0b0e14;
+            --bg-dark-card: #121824;
+            --gold-subtle: rgba(212, 175, 55, 0.15);
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-dark: #1e293b;
+        }
+
+        body {
+            background-color: var(--bg-classic-dark);
+            color: var(--text-body);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+        }
+
+        /* Hero Typography */
+        .classic-hero-title {
+            font-family: 'Cinzel', serif;
+            font-size: 3.2rem;
+            color: var(--text-heading);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .classic-hero-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--gold-accent);
+            letter-spacing: 1px;
+        }
+
+        /* Section Styling */
+        .classic-section {
+            padding: 90px 0;
+            background-color: var(--bg-classic-dark);
+        }
+
+        .section-tag {
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            color: var(--gold-accent);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .section-title-classic {
+            font-family: 'Cinzel', serif;
+            font-size: 2.4rem;
+            color: var(--text-heading);
+            margin-bottom: 20px;
+        }
+
+        .gold-divider {
+            width: 60px;
+            height: 1px;
+            background: var(--gold-accent);
+            margin: 25px auto;
+        }
+
+        /* Feature Editorial Layout (Storytelling Block) */
+        .editorial-block {
+            background: var(--bg-card-dark);
+            border: 1px solid var(--border-classic);
+            padding: 50px;
+            border-radius: 4px;
+            position: relative;
+            margin-bottom: 60px;
+        }
+
+        .editorial-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            color: var(--text-heading);
+            margin-bottom: 8px;
+        }
+
+        .editorial-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            color: var(--gold-accent);
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .editorial-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--text-heading);
+            border-left: 2px solid var(--gold-accent);
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+
+        .guild-img-frame {
+            position: relative;
+            padding: 10px;
+            border: 1px solid var(--gold-muted);
+            background: var(--bg-classic-dark);
+        }
+
+        .guild-img-frame img {
+            width: 100%;
+            filter: grayscale(40%) contrast(110%);
+            transition: filter 0.5s ease;
+        }
+
+        .guild-img-frame:hover img {
+            filter: grayscale(0%);
+        }
+
+        /* Interactive Counter Banner */
+        .metrics-banner {
+            background: var(--bg-card-dark);
+            border-top: 1px solid var(--border-classic);
+            border-bottom: 1px solid var(--border-classic);
+            padding: 60px 0;
+            margin-top: 90px;
+        }
+
+        .metric-number {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            color: var(--gold-accent);
+            display: block;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--text-body);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+
+
+        /* Value Badges Section */
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            color: var(--bg-dark-card);
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+        .value-card {
+            background: var(--bg-dark-card);
+            border: 1px solid var(--border-dark);
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            height: 100%;
+            transition: border-color 0.3s ease;
+        }
+
+        .value-card:hover {
+            border-color: var(--gold-primary);
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            color: var(--gold-primary);
+            margin-bottom: 15px;
+        }
+
+        .value-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .value-text {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            margin: 0;
+        }
+
+
+        /* Heritage Quote Banner */
+        .heritage-banner {
+            background: linear-gradient(rgba(8, 10, 15, 0.92), rgba(8, 10, 15, 0.92)), url('https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1600&q=80') center/cover;
+            padding: 100px 0;
+            text-align: center;
+            border-top: 1px solid var(--border-classic);
+            border-bottom: 1px solid var(--border-classic);
+        }
+
+        .heritage-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--text-heading);
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            line-height: 1.5;
+        }
+    </style>
 </head>
 
 <body>
@@ -101,135 +321,104 @@
         </div>
         <!-- Navbar & Hero End -->
 
-
-        <!-- Team Start -->
-        <div class="container-xxl pt-5 pb-3">
+        <!-- Principal Patron / Founder Spotlight -->
+        <section class="classic-section pt-0 pb-0">
             <div class="container">
-                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Team Members</h5>
-                    <h1 class="mb-5">Our Master Chefs</h1>
-                </div>
-                <div class="row g-4">
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="team-item text-center rounded overflow-hidden">
-                            <div class="rounded-circle overflow-hidden m-4">
-                                <img class="img-fluid" src="img/team-1.jpg" alt="">
-                            </div>
-                            <h5 class="mb-0">Full Name</h5>
-                            <small>Designation</small>
-                            <div class="d-flex justify-content-center mt-3">
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                <div class="editorial-block">
+                    <div class="row align-items-center g-5">
+                        <div class="col-lg-5">
+                            <div class="guild-img-frame">
+                                <img src="img/hero..png" alt="Master Silversmith" onerror="this.src=''">
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="team-item text-center rounded overflow-hidden">
-                            <div class="rounded-circle overflow-hidden m-4">
-                                <img class="img-fluid" src="img/team-2.jpg" alt="">
+                        <div class="col-lg-7">
+                            <span class="section-tag">Lineage & Vision</span>
+                            <h2 class="editorial-title">Sachin Subarao Patli</h2>
+                            <p class="editorial-subtitle">Founding Custodians</p>
+                            
+                            <p>For decades, Hari Om Silver House has eschewed modern mass production in favor of dedicated silver craft. Every curve, engraving, and polish is overseen by traditional artisans who treat silver not merely as metal, but as a living canvas of family heritage.</p>
+                            
+                            <div class="editorial-quote">
+                                "True luxury lies in patience. A silver piece shouldn't just sparkle today; it must carry its weight, purity, and story across generations."
                             </div>
-                            <h5 class="mb-0">Full Name</h5>
-                            <small>Designation</small>
-                            <div class="d-flex justify-content-center mt-3">
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="team-item text-center rounded overflow-hidden">
-                            <div class="rounded-circle overflow-hidden m-4">
-                                <img class="img-fluid" src="img/team-3.jpg" alt="">
-                            </div>
-                            <h5 class="mb-0">Full Name</h5>
-                            <small>Designation</small>
-                            <div class="d-flex justify-content-center mt-3">
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="team-item text-center rounded overflow-hidden">
-                            <div class="rounded-circle overflow-hidden m-4">
-                                <img class="img-fluid" src="img/team-4.jpg" alt="">
-                            </div>
-                            <h5 class="mb-0">Full Name</h5>
-                            <small>Designation</small>
-                            <div class="d-flex justify-content-center mt-3">
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="team-item text-center rounded overflow-hidden">
-                            <div class="rounded-circle overflow-hidden m-4">
-                                <img class="img-fluid" src="img/team-2.jpg" alt="">
-                            </div>
-                            <h5 class="mb-0">Full Name</h5>
-                            <small>Designation</small>
-                            <div class="d-flex justify-content-center mt-3">
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="team-item text-center rounded overflow-hidden">
-                            <div class="rounded-circle overflow-hidden m-4">
-                                <img class="img-fluid" src="img/team-3.jpg" alt="">
-                            </div>
-                            <h5 class="mb-0">Full Name</h5>
-                            <small>Designation</small>
-                            <div class="d-flex justify-content-center mt-3">
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="team-item text-center rounded overflow-hidden">
-                            <div class="rounded-circle overflow-hidden m-4">
-                                <img class="img-fluid" src="img/team-4.jpg" alt="">
-                            </div>
-                            <h5 class="mb-0">Full Name</h5>
-                            <small>Designation</small>
-                            <div class="d-flex justify-content-center mt-3">
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="team-item text-center rounded overflow-hidden">
-                            <div class="rounded-circle overflow-hidden m-4">
-                                <img class="img-fluid" src="img/team-1.jpg" alt="">
-                            </div>
-                            <h5 class="mb-0">Full Name</h5>
-                            <small>Designation</small>
-                            <div class="d-flex justify-content-center mt-3">
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
+                            
+                            <p class="mb-0">Operating from our historic ateliers in Pune and Vita, our atelier bridges ancient Maharashtrian silverware artistry with timeless modern aesthetics.</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Team End -->
-        
+        </section>
+
+         <!-- Metric Banner -->
+        <section class="metrics-banner">
+            <div class="container">
+                <div class="row text-center g-4">
+                    <div class="col-md-3 col-6">
+                        <span class="metric-number">50+</span>
+                        <div class="metric-label">Varities</div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <span class="metric-number">2+</span>
+                        <div class="metric-label">Heritage Branches</div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <span class="metric-number">100%</span>
+                        <div class="metric-label">Handcrafted Finish</div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <span class="metric-number">Infinite</span>
+                        <div class="metric-label">Asset Longevity</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brand Values Grid -->
+        <section class="dark-section border-top border-secondary mb-4">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Craftsmanship Standards</h2>
+                    <p>What drives our team every single day</p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="value-card">
+                            <div class="value-icon"><i class="bi bi-gem"></i></div>
+                            <h4 class="value-title">Purity Certified</h4>
+                            <p class="value-text">Every article is rigorously verified using modern spectrometry testing.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="value-card">
+                            <div class="value-icon"><i class="bi bi-tools"></i></div>
+                            <h4 class="value-title">Hand-Finished Precision</h4>
+                            <p class="value-text">Blending ancient Indian heritage techniques with precision polishing for mirror-like finish.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="value-card">
+                            <div class="value-icon"><i class="bi bi-shield-check"></i></div>
+                            <h4 class="value-title">Lifetime Integrity</h4>
+                            <p class="value-text">We stand behind all craftsmanship with free lifetime cleaning and maintenance consultations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Heritage Quote Banner -->
+        <section class="heritage-banner">
+            <div class="container">
+                <div class="heritage-quote">
+                    "Silver holds the memory of the hand that shaped it and the warmth of the home that honors it."
+                </div>
+                <span class="section-tag" style="letter-spacing: 4px;">— HARI OM SILVER HOUSE GUILD</span>
+            </div>
+        </section>
 
           <!-- Footer Start -->
-        <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container-fluid bg-dark text-light footer wow fadeIn" data-wow-delay="0.1s">
             <div class="container py-5">
                 <div class="row g-5">
                     <div class="col-lg-3 col-md-6">
